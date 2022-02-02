@@ -3,6 +3,9 @@
 ## Description
 The purpose of this project was to convert an existing budget tracking application into a progressive web application.
 
+## Screenshot
+![Alt text](misc/application-screenshot.png)
+
 ## Table Of Contents
 * [Description](#description)
 * [Installation](#installation)
