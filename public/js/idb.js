@@ -8,7 +8,6 @@ request.onupgradeneeded = function (event) {
 
 request.onsuccess = function (event) {
     db = event.target.result;
-
     if (navigator.onLine) {
         UpdateBudget();
     }
@@ -20,17 +19,13 @@ request.onerror = function (event) {
 
 function saveRecord(record) {
     const transaction = db.transaction(['new_transaction'], 'readwrite');
-
     const budgetObjectStore = transaction.objectStore('new_transaction');
-
     budgetObjectStore.add(record);
 };
 
 function UpdateBudget() {
     const transaction = db.transaction(['new_transaction'], 'readwrite');
-
     const budgetObjectStore = transaction.objectStore('new_transaction');
-
     const getAll = budgetObjectStore.getAll();
 
     getAll.onsuccess = function () {
@@ -48,7 +43,6 @@ function UpdateBudget() {
                     if (serverResponse.message) {
                         throw new Error(serverResponse);
                     }
-
                     const transaction = db.transaction(['new_transaction'], 'readwrite');
                     const budgetObjectStore = transaction.objectStore('new_transaction');
                     budgetObjectStore.clear();
